@@ -64,8 +64,11 @@ namespace Calculator
         {
             if (double.TryParse(resultLabel.Content.ToString(), out lastNumber))
             {
-                lastNumber = lastNumber / 100;
-                resultLabel.Content = lastNumber.ToString();
+                //lastNumber = lastNumber / 100;
+                //resultLabel.Content = lastNumber.ToString();
+
+                
+
             }
         }
 
@@ -175,6 +178,12 @@ namespace Calculator
 
         public static double Division(double n1, double n2)
         {
+            if(n2 == 0)
+            {
+                MessageBox.Show("Division by 0 is not supported", "Wrong operation", MessageBoxButton.OK, MessageBoxImage.Error);
+                return 0;
+            }
+
             return n1 / n2;
         }
     }
